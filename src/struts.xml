@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <include file="struts-default.xml" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="function" extends="struts-default">
+		<action name="signup" method="judge" class="function.signup">
+			<result name="finish">FunctionChoose.jsp</result>
+			<result name="unfinish">signup2.jsp</result>
+			<result name="Error">Error.jsp</result>
+		</action>
+		<action name="gongzisee" method="show" class="function.gongzisee">
+		    <result name="finish">gongzilook.jsp</result>
+		    <result name="unfinish">Error.jsp</result>
+		</action>
+	</package>
+</struts>    
