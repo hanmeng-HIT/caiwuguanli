@@ -28,14 +28,11 @@ public class signup extends ActionSupport {
 				//if (rs.getString("password") == password) {
 				if(rs.getString("password").equals(password)){
 					session.setAttribute("ID",ID);
-					System.out.println("*****aaa*******");
 					return "finish";
 				} else{
-					System.out.println("*******bbb******");
 					return "unfinish";
 				}
 			}
-			System.out.println("******cccc*****");
 			return "Error";
 		} catch (Exception e) {
 			System.out.println(e);

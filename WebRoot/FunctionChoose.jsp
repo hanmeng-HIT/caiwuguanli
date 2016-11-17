@@ -6,15 +6,20 @@
 <html>
   <head>
     
-    <title></title>
+    <title>管理员页面</title>
     
 
   </head>
   
   <body>
-   <%String ID = (String)session.getAttribute("ID");%>
-    <form action="gongzisee.action" ID="ID">
+    <form action="gongzisee.action">
     <input type="submit" value="工资管理">
+    </form>
+    <form action="yuangongsee.action">
+    <input type="submit" value="员工管理">
+    </form>
+    <form action="taxjudge.jsp">
+    <input type="submit" value="税务统计">
     </form>
   </body>
 </html>

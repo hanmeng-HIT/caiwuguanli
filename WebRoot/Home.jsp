@@ -12,5 +12,8 @@
 	<form action="signup.jsp">
 		<input type="submit" value="登录" >
 	</form>
+	<form action="listen.jsp">
+		<input type="submit" value="联系我们" >
+	</form>
 </body>
 </html>

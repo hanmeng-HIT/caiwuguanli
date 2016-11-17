@@ -5,13 +5,47 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<package name="function" extends="struts-default">
 		<action name="signup" method="judge" class="function.signup">
-			<result name="finish">FunctionChoose.jsp</result>
+			<result name="finish">temp1.jsp</result>
 			<result name="unfinish">signup2.jsp</result>
 			<result name="Error">Error.jsp</result>
 		</action>
 		<action name="gongzisee" method="show" class="function.gongzisee">
 		    <result name="finish">gongzilook.jsp</result>
-		    <result name="unfinish">Error.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="taxmake" method="make" class="function.taxmake">
+		    <result name="finish">taxout.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action><action name="yuangongadd" method="add" class="function.yuangongadd">
+		    <result name="finish">temp.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action><action name="yuangongsee" method="show" class="function.yuangongsee">
+		    <result name="finish">yuangonglook.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action><action name="yuangongsee1" method="show" class="function.yuangongsee1">
+		    <result name="finish">yuangonglook.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="yuangongsee2" method="show" class="function.yuangongsee2">
+		    <result name="finish">yuangonglook.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+	    <action name="yuangongsee3" method="show" class="function.yuangongsee3">
+		    <result name="finish">yuangonglook.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="yuangongsee4" method="show" class="function.yuangongsee4">
+		    <result name="finish">yuangonglook.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="yuangongsee5" method="show" class="function.yuangongsee5">
+		    <result name="finish">yuangonglook.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="taxjudge" method="judge" class="function.taxjudge">
+		    <result name="finish1">taxout.jsp</result>
+		    <result name="finish2">taxin.jsp</result>
+		    <result name="Error">Error.jsp</result>
 		</action>
 	</package>
 </struts>    
