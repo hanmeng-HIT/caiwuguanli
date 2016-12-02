@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import connectdb.ConnectionTool;
 import entity.gongzi;
+import entity.tax;
 
-public class taxmake {
+public class taxmake extends ActionSupport {
 	private String taxnumber;
 	private double fuwu;
 	private double xiaoshou;
@@ -17,6 +20,8 @@ public class taxmake {
 	private double taxyncj;
 	private double taxynjy;
 	private double taxsuode;
+	
+	private tax tbox=new tax();
 
 	public String make() {
 		taxyingye = fuwu * 0.05;// 计算营业税
@@ -25,13 +30,14 @@ public class taxmake {
 		taxynjy = taxzengzhi + taxyingye * 0.03;// 计算应纳教育附加
 		Connection conn = null;
 		PreparedStatement ps = null;
+		PreparedStatement ps1 = null;
 		PreparedStatement ps2 = null;
 		ResultSet rs = null;
-		String sql = "select * from id";
-		String sql2= "INSERT INTO id (gtax,truemoney) VALUES (?,?)";
-		String sql1= "INSERT INTO tax VALUES("+taxnumber+","+taxyingye+","+taxzengzhi+","+taxsuode+","+taxyncj+","+taxynjy+")";
-		conn = ConnectionTool.connectTheDb();
 		
+		String sql = "select * from id";
+		String sql2= "update id set gtax=?,truemoney=? where ID=?";
+		String sql1= "INSERT INTO tax VALUES(?,?,?,?,?,?)";
+		conn = ConnectionTool.connectTheDb();
 		try{
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -72,14 +78,16 @@ public class taxmake {
 				ps2 = conn.prepareStatement(sql2);
 				ps2.setDouble(1,temp.getGtax());
 				ps2.setDouble(2,temp.getTruemoney());
+				ps2.setString(3,temp.getID());
 				ps2.executeUpdate();
 			}
 		}catch (Exception e) {
-			System.out.println(e);
-			return "ERROR";
+			e.printStackTrace();
+			return "Error";
 		}
 		
 		try {
+			//System.out.println("111");
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			double dsgs = 0;
@@ -89,13 +97,24 @@ public class taxmake {
 			taxsuode=dsgs;
 		} catch (Exception e) {
 			System.out.println(e);
-			return "ERROR";
+			return "Error";
 		}
 		
 		try{
-			java.sql.Statement s=conn.createStatement();
-			s.execute(sql1);
-			conn.close();
+			System.out.println("222");
+			ps1 = conn.prepareStatement(sql1);
+			ps1.setString(1,taxnumber);
+			ps1.setDouble(2,taxyingye);
+			ps1.setDouble(3,taxzengzhi);
+			ps1.setDouble(4,taxsuode);
+			ps1.setDouble(5,taxyncj);
+			ps1.setDouble(6,taxynjy);
+			ps1.executeUpdate();
+			tbox.setTaxsuode(taxsuode);
+			tbox.setTaxyingye(taxyingye);
+			tbox.setTaxyncj(taxyncj);
+			tbox.setTaxynjy(taxynjy);
+			tbox.setTaxzengzhi(taxzengzhi);
 			return "finish";
 		}
 		catch(Exception e){
@@ -166,6 +185,22 @@ public class taxmake {
 
 	public void setTaxsuode(double taxsuode) {
 		this.taxsuode = taxsuode;
+	}
+
+	public String getTaxnumber() {
+		return taxnumber;
+	}
+
+	public void setTaxnumber(String taxnumber) {
+		this.taxnumber = taxnumber;
+	}
+
+	public tax getTbox() {
+		return tbox;
+	}
+
+	public void setTbox(tax tbox) {
+		this.tbox = tbox;
 	}
 }
 

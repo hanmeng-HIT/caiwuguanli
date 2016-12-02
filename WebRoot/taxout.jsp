@@ -14,21 +14,21 @@
   <h2>本月各项税务统计如下</h2>
   <table border="1" align="center">
       <tr>
+           <td>税务报表编号</td>
            <td>营业税</td>
            <td>增值税</td>
            <td>应纳城建税</td>
            <td>应纳教育税附加</td>
            <td>总代收个人所得税</td>
       </tr>
-      <s:iterator value="tbox" var="b">
       <tr>
-           <td>${b.taxyingye}</td>
-           <td>${b.taxzengzhi}</td>
-           <td>${b.taxyncj}</td>
-           <td>${b.taxynjy}</td>
-           <td>${b.taxsuode}</td>
+           <td>${tbox.taxnumber}</td>
+           <td>${tbox.taxyingye}</td>
+           <td>${tbox.taxzengzhi}</td>
+           <td>${tbox.taxyncj}</td>
+           <td>${tbox.taxynjy}</td>
+           <td>${tbox.taxsuode}</td>
       </tr>
-    </s:iterator>
     </table>
   </body>
 </html>

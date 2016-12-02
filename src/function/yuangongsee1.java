@@ -18,12 +18,17 @@ public class yuangongsee1 extends ActionSupport {
 		conn = ConnectionTool.connectTheDb();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from id where bumen='总经理办公室'";
+		String sql = "select * from id where bumen = ?";
 		try{
+			String t="总经理办公室";
 			ps = conn.prepareStatement(sql);
+			ps.setString(1,t);
 			rs = ps.executeQuery();
+			
 			while(rs.next())
 			{
+				System.out.println("666");
+				System.out.println(rs.getString("ID"));
 				people temp = new people();
 				temp.setID(rs.getString("ID"));
 				temp.setName(rs.getString("name"));
@@ -33,6 +38,8 @@ public class yuangongsee1 extends ActionSupport {
 				temp.setEmail(rs.getString("email"));
 				yuangong.add(temp);
 			}
+			System.out.println("789");
+			System.out.println(yuangong);
 			return "finish";
 			
 		}catch(Exception e){

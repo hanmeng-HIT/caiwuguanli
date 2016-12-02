@@ -1,6 +1,7 @@
 package entity;
 
 public class tax {
+	   private String taxnumber;
        private double taxyingye;
        private double taxzengzhi;
        private double taxyncj;
@@ -35,5 +36,11 @@ public class tax {
 	}
 	public void setTaxsuode(double taxsuode) {
 		this.taxsuode = taxsuode;
+	}
+	public String getTaxnumber() {
+		return taxnumber;
+	}
+	public void setTaxnumber(String taxnumber) {
+		this.taxnumber = taxnumber;
 	}
 }

@@ -47,5 +47,17 @@
 		    <result name="finish2">taxin.jsp</result>
 		    <result name="Error">Error.jsp</result>
 		</action>
+		<action name="yuangongdelete" method="delete" class="function.yuangongdelete">
+		    <result name="finish" type="redirectAction">yuangongsee</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="gongzimake" method="make" class="function.gongzimake">
+		    <result name="finish" type="redirectAction">gongzisee</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="pschange" method="change" class="function.pschange">
+		    <result name="finish">Home.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
 	</package>
 </struts>    

@@ -25,6 +25,7 @@ public class yuangongsee extends ActionSupport {
 			while(rs.next())
 			{
 				people temp = new people();
+				//System.out.println(rs.getString("ID"));
 				temp.setID(rs.getString("ID"));
 				temp.setName(rs.getString("name"));
 				temp.setAge(rs.getInt("age"));
@@ -38,6 +39,12 @@ public class yuangongsee extends ActionSupport {
 		}catch(Exception e){
 			return "ERROR";
 		}
+	}
+	public List<people> getYuangong() {
+		return yuangong;
+	}
+	public void setYuangong(List<people> yuangong) {
+		this.yuangong = yuangong;
 	}
 	
 	}

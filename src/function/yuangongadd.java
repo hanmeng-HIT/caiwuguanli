@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import connectdb.ConnectionTool;
 
-public class yuangongadd {
+public class yuangongadd extends ActionSupport {
 	private String name;
     private int age;
     private String bumen;
@@ -19,24 +21,30 @@ public class yuangongadd {
 		PreparedStatement ps = null;
 		PreparedStatement ps1 = null;
 		ResultSet rs = null;
-		String sql = "select count(*) from id";
-		String sql1 ="INSERT INTO id (ID,name,age,bumen,tele,email) VALUES (?,?,?,?,?,?)";
+		String sql = "select count(1) from id";
+		String sql1 ="INSERT INTO id (ID,password,name,age,bumen,tele,email) VALUES (?,?,?,?,?,?,?)";
 		try{
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
-			count=rs.getInt(0);
+			while(rs.next()){
+				count=rs.getInt(1);
+			}
+			
+			System.out.println("+++++++"+count+"+++++");
 			String ID=String.valueOf(2016000+count);
 			ps1 = conn.prepareStatement(sql1);
 			ps1.setString(1,ID);
-			ps1.setString(2,name);
-			ps1.setInt(3,age);
-			ps1.setString(4,bumen );
-			ps1.setString(5,tele);
-			ps1.setString(6,email);
+			ps1.setString(2,"000000");
+			ps1.setString(3,name);
+			ps1.setInt(4,age);
+			ps1.setString(5,bumen);
+			ps1.setString(6,tele);
+			ps1.setString(7,email);
 			ps1.executeUpdate();
 			return "finish";
 		}catch(Exception e){
-			return "ERROR";
+			e.printStackTrace();
+			return "Error";
 		}
 		
 		

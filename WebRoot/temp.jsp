@@ -11,13 +11,7 @@
   </head>
   
   <body>
-  <div class="alert alert-success alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert"
-                    aria-hidden="true">
-                &times;
-            </button>
-            成功！很好地完成了添加。
-        </div>
-    <meta http-equiv="Refresh" content="3;url=yuangongsee.jsp">
+  <div class="alert alert-success">添加成功(2秒后自动跳转)</div>
+    <meta http-equiv="Refresh" content="3;url=yuangonglook.jsp">
   </body>
 </html>
