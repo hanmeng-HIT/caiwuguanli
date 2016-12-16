@@ -37,7 +37,7 @@ public class yuangongsee extends ActionSupport {
 			return "finish";
 			
 		}catch(Exception e){
-			return "ERROR";
+			return "Error";
 		}
 	}
 	public List<people> getYuangong() {

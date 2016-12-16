@@ -5,7 +5,8 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<package name="function" extends="struts-default">
 		<action name="signup" method="judge" class="function.signup">
-			<result name="finish">temp1.jsp</result>
+			<result name="finish1">FunctionChoose.jsp</result>
+			<result name="finish2">FunctionChoose2.jsp</result>
 			<result name="unfinish">signup2.jsp</result>
 			<result name="Error">Error.jsp</result>
 		</action>
@@ -56,7 +57,129 @@
 		    <result name="Error">Error.jsp</result>
 		</action>
 		<action name="pschange" method="change" class="function.pschange">
-		    <result name="finish">Home.jsp</result>
+		    <result name="finish">FunctionChoose.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="taxallsee" method="show" class="function.taxallsee">
+		    <result name="finish">taxall.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="gongziseeall" method="show" class="function.gongziseeall">
+		    <result name="finish">gongzilook2.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="pschange2" method="change" class="function.pschange2">
+		    <result name="finish">signup.jsp</result>
+		     <result name="unfinish">FunctionChoose2.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		
+		
+		
+		
+		<action name="Invoice_Baoxiao_Information_Storage" method="Add" class="function_Invoice.Invoice_Baoxiao_Information_Storage">
+		    <result name="finish">Invoice_Baoxiao_Information_Storage_Successfully.jsp</result>
+		    <result name="Error">Error.jsp</result>		    
+		</action>
+		<action name="Invoice_Baoxiao_ShowAll" method="ShowAll" class="function_Invoice.Invoice_Baoxiao_ShowAll">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>		    
+		</action>
+		<action name="Invoice_Baoxiao_ShowOne" method="ShowOne" class="function_Invoice.Invoice_Baoxiao_ShowOne">
+		    <result name="finish">Invoice_Bao_ShowOne.jsp</result>
+		    <result name="ERROR">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_DeleteOne" method="Delete" class="function_Invoice.Invoice_Baoxiao_DeleteOne">
+		    <result name="finish">Invoice_Baoxiao_DeleteOne_Successfully.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_Search" method="Search" class="function_Invoice.Invoice_Baoxiao_Search">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_Search_Datebao" method="Search" class="function_Invoice.Invoice_Baoxiao_Search_Datebao">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_Search_Code" method="Search" class="function_Invoice.Invoice_Baoxiao_Search_Code">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_Search_Number" method="Search" class="function_Invoice.Invoice_Baoxiao_Search_Number">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_Search_Huowumingcheng" method="Search" class="function_Invoice.Invoice_Baoxiao_Search_Huowumingcheng">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_Search_Heji" method="Search" class="function_Invoice.Invoice_Baoxiao_Search_Heji">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Baoxiao_Search_Shoukuandanwei" method="Search" class="function_Invoice.Invoice_Baoxiao_Search_Shoukuandanwei">
+		    <result name="finish">Invoice_Bao_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_Information_Storage" method="Add" class="function_Invoice.Invoice_Kai_Information_Storage">
+		    <result name="finish">Invoice_Kai_Information_Storag_Successfully.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_ShowAll" method="ShowAll" class="function_Invoice.Invoice_Kai_ShowAll">
+		    <result name="finish">Invoice_Kai_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_ShowOne" method="ShowOne" class="function_Invoice.Invoice_Kai_ShowOne">
+		    <result name="finish">Invoice_Kai_ShowOne.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_DeleteOne" method="Delete" class="function_Invoice.Invoice_Kai_DeleteOne">
+		    <result name="finish">Invoice_Kai_DeleteOne_Successfully.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_Search_Date" method="Search" class="function_Invoice.Invoice_Kai_Search_Date">
+		    <result name="finish">Invoice_Kai_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_Search_Code" method="Search" class="function_Invoice.Invoice_Kai_Search_Code">
+		    <result name="finish">Invoice_Kai_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_Search_Number" method="Search" class="function_Invoice.Invoice_Kai_Search_Number">
+		    <result name="finish">Invoice_Kai_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_Search_Pinming" method="Search" class="function_Invoice.Invoice_Kai_Search_Pinming">
+		    <result name="finish">Invoice_Kai_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_Search_Heji" method="Search" class="function_Invoice.Invoice_Kai_Search_Heji">
+		    <result name="finish">Invoice_Kai_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Invoice_Kai_Search_Username" method="Search" class="function_Invoice.Invoice_Kai_Search_Username">
+		    <result name="finish">Invoice_Kai_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		<action name="Report_Information_Storage" method="Add" class="function_Report.Report_Information_Storage">
+		    <result name="finish">Report_Information_Storage_Successfully.jsp</result>
+		    <result name="Error">Error.jsp</result>	
+		</action>
+		<action name="Report_ShowAll" method="ShowAll" class="function_Report.Report_ShowAll">
+		    <result name="finish">Report_Show.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Report_Search_Month" method="Search" class="function_Report.Report_Search_Month">
+		    <result name="finish">Report_ShowOne.jsp</result>
+		    <result name="Error">Error.jsp</result>
+		</action>
+		<action name="Report_DeleteOne" method="Delete" class="function_Report.Report_DeleteOne">
+		    <result name="finish">Report_DeleteOne_Succesfully.jsp</result>
 		    <result name="Error">Error.jsp</result>
 		</action>
 	</package>

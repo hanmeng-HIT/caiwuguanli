@@ -3,7 +3,7 @@ import java.sql.*;
 public class ConnectionTool  {   
     private static String DBDRIVER   = "com.mysql.jdbc.Driver";                                      
     private static String DBURL      = "jdbc:mysql://localhost:3306/moneydb?useUnicode=true&character=UTF-8&useSSL=true";               
-    private static String DBUSER     = "root";  
+    private static String DBUSER     = "root";  //fdcgwnxfqqeg.mysql.sae.sina.com.cn:10431
     private static String DBPASSWORD = "123456";  
     public static Connection connectTheDb(){
     	try{

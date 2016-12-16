@@ -18,11 +18,12 @@ public class yuangongsee1 extends ActionSupport {
 		conn = ConnectionTool.connectTheDb();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from id where bumen = ?";
+		String t="鎬荤粡鐞嗗姙鍏";
+		String sql = "select * from id where bumen like '"+t+"'";
 		try{
-			String t="总经理办公室";
+			
 			ps = conn.prepareStatement(sql);
-			ps.setString(1,t);
+			//ps.setString(1,t);
 			rs = ps.executeQuery();
 			
 			while(rs.next())
@@ -43,7 +44,7 @@ public class yuangongsee1 extends ActionSupport {
 			return "finish";
 			
 		}catch(Exception e){
-			return "ERROR";
+			return "Error";
 		}
 	}
 	public List<people> getYuangong() {

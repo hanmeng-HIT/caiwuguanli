@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+    <button type="button" class="btn btn-primary btn-lg btn-block"  onclick="location.href='taxallsee.action'">税务记录</button>
 	<button class="btn btn-primary btn-lg" data-toggle="modal"
 		data-target="#myModal">查询/新建税务表</button>
 	<!-- 模态框（Modal） -->

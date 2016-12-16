@@ -15,20 +15,29 @@ public class signup extends ActionSupport {
 	private String password;
 	HttpServletRequest request = ServletActionContext.getRequest();
 	HttpSession session = request.getSession(); 
+	
 	public String judge() {
+		session.setAttribute("ID",ID);
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		String sql = "select * from id where ID='"+ID+"'";
 		conn = ConnectionTool.connectTheDb();
+		String b="admin";
 		try {
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				//if (rs.getString("password") == password) {
 				if(rs.getString("password").equals(password)){
-					session.setAttribute("ID",ID);
-					return "finish";
+					if(ID.equals(b))
+					{
+						return "finish1";
+					}
+					else{
+						return "finish2";
+					}
+					
 				} else{
 					return "unfinish";
 				}

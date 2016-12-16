@@ -31,14 +31,14 @@ public class taxmake extends ActionSupport {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		PreparedStatement ps1 = null;
-		PreparedStatement ps2 = null;
+		//PreparedStatement ps2 = null;
 		ResultSet rs = null;
 		
 		String sql = "select * from id";
-		String sql2= "update id set gtax=?,truemoney=? where ID=?";
+		//String sql2= "update id set gtax=?,truemoney=? where ID=?";
 		String sql1= "INSERT INTO tax VALUES(?,?,?,?,?,?)";
 		conn = ConnectionTool.connectTheDb();
-		try{
+		/*try{
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next())
@@ -85,7 +85,7 @@ public class taxmake extends ActionSupport {
 			e.printStackTrace();
 			return "Error";
 		}
-		
+		*/
 		try {
 			//System.out.println("111");
 			ps = conn.prepareStatement(sql);
@@ -122,7 +122,8 @@ public class taxmake extends ActionSupport {
 			return "Error";
 		}
 	}
-
+			
+		
 	public double getFuwu() {
 		return fuwu;
 	}

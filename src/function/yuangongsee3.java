@@ -18,7 +18,8 @@ public class yuangongsee3 extends ActionSupport {
 		conn = ConnectionTool.connectTheDb();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from id where bumen='²ÆÎñ²¿'";
+		String t="è´¢åŠ¡éƒ¨";
+		String sql = "select * from id where bumen like '"+t+"'";
 		try{
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();

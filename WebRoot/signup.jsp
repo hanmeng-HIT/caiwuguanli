@@ -20,6 +20,11 @@
   </head>
   
  <body>
+ <style>
+body {
+	background-image: url("media/12.jpg");
+}
+</style>
 	<div class="htmleaf-container">
 		
 	<svg id="svg-source" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" style="position:absolute; margin-left: -100%" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -106,6 +111,10 @@
               </label>
             </div>
         </div>
+        <% String textContent = request.getParameter("ID");
+         session.setAttribute("ID",textContent);%>
+        
+        
         <div class="modal__section">
             <div class="input-with-label">
               <input name="password" type="password" class="input-with-label__input">

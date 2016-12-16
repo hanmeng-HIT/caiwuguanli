@@ -8,15 +8,10 @@ public class gongzi {
 	private double jintie;
 	private double jiaban;
 	private double gtax;
+	private String time;
 	private double truemoney;
+    private String gongzinum;
 
-	public String getID() {
-		return ID;
-	}
-
-	public void setID(String iD) {
-		ID = iD;
-	}
 
 	public double getJiben() {
 		return jiben;
@@ -72,5 +67,29 @@ public class gongzi {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getID() {
+		return ID;
+	}
+
+	public void setID(String iD) {
+		ID = iD;
+	}
+
+	public String getGongzinum() {
+		return gongzinum;
+	}
+
+	public void setGongzinum(String gongzinum) {
+		this.gongzinum = gongzinum;
 	}
 }

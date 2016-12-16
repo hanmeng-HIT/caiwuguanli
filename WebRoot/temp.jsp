@@ -12,6 +12,6 @@
   
   <body>
   <div class="alert alert-success">添加成功(2秒后自动跳转)</div>
-    <meta http-equiv="Refresh" content="3;url=yuangonglook.jsp">
+    <meta http-equiv="Refresh" content="3;url=FunctionChoose.jsp">
   </body>
 </html>

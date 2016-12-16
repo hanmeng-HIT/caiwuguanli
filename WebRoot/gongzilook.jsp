@@ -25,6 +25,7 @@
 </head>
 
 <body>
+
 	<table class="table table-hover" border="1" align="center">
 		<caption><h2>员工总体工资如下</h2></caption>
 		<thead>
@@ -37,6 +38,7 @@
 				<td>加班工资</td> 
 				<td>代收个税</td>
 				<td>实发工资</td>
+				<td>时间</td>
 				<td>操作</td>
 			</tr>
 		</thead>
@@ -52,6 +54,7 @@
 					<td>${b.jiaban}</td>
 					<td>${b.gtax}</td>
 					<td>${b.truemoney}</td>
+					<td>${b.time}</td>
 					<td><input type="button" ID=${b.ID
 						}
 						class="btn btn-primary btn-lg" data-toggle="modal"
@@ -61,7 +64,8 @@
 			</tbody>
 		</s:iterator>
 	</table>
-	<br><br><br><br><br>
+	<br>
+
 <button type="button" class="btn btn-primary btn-lg btn-block"  onclick="location.href='FunctionChoose.jsp'">返回</button>
 
 
@@ -110,6 +114,11 @@
 								<div class="input-group input-group-lg">
 									<span class="input-group-addon">加班工资</span> <input type="text"
 										name="jiaban" class="form-control" placeholder="请输入加班工资">
+									<br>
+								</div>
+								<div class="input-group input-group-lg">
+									<span class="input-group-addon">时间</span> <input type="text"
+										name="time" class="form-control" placeholder="请输入此工资单时间">
 									<br>
 								</div>
 								<div class="modal-footer">
